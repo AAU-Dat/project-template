@@ -1,7 +1,6 @@
 name: Setup github repository
 on:
   create:
-  workflow_dispatch:
 
 jobs:
   test:
