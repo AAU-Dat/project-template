@@ -7,9 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: download configuration file
-        run: curl -fSLo config.json https://raw.githubusercontent.com/AAU-Dat/.github/main/configuration/branch-protection.json
+        run: curl -fSLo branch-protection.json https://raw.githubusercontent.com/AAU-Dat/.github/main/configuration/branch-protection.json
       - name: create branch protection rules for main
-        run: gh api -X PUT /repos/${{ github.repository }}/branches/main/protection --input config.json
+        run: gh api -X PUT /repos/${{ github.repository }}/branches/main/protection --input branch-protection.json
         env:
           GH_TOKEN: ${{ secrets.PAT_GITHUB_TOKEN }}
       - name: disable this workflow
