@@ -3,16 +3,17 @@ on:
   create:
 
 jobs:
-  test:
+  configure-github:
+    name: Configure GitHub branch protection
     runs-on: ubuntu-latest
     steps:
-      - name: download configuration file
+      - name: Download configuration file
         run: curl -fSLo branch-protection.json https://raw.githubusercontent.com/AAU-Dat/.github/main/configuration/branch-protection.json
-      - name: create branch protection rules for main
+      - name: Create branch protection rules for main
         run: gh api -X PUT /repos/${{ github.repository }}/branches/main/protection --input branch-protection.json
         env:
           GH_TOKEN: ${{ secrets.PAT_GITHUB_TOKEN }}
-      - name: disable this workflow
+      - name: Disable this workflow
         run: gh workflow disable "setup-github.yaml" --repo ${{ github.repository }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
