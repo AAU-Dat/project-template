@@ -7,8 +7,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: gh extension install twelvelabs/gh-repo-config
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: gh repo-config init
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: gh repo-config apply
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: gh workflow disable "setup-github.yaml" --repo ${{ github.repository }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
