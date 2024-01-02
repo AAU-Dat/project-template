@@ -10,3 +10,5 @@ jobs:
         run: echo "Hello, World!"
       - name: Disable action
         run : gh workflow disable "setup-github.yaml"
+        env:
+          GH_TOKEN: ${{ github.token }}
