@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: gh api -X PUT /repos/{owner}/{repo}/branches/main/protection --input="branch-protection.json"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: gh workflow disable "setup-github.yaml" --repo ${{ github.repository }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
