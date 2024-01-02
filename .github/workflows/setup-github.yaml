@@ -1,16 +1,12 @@
 name: Setup github repository
 on:
   create:
-
-permissions: write-all
+  workflow_dispatch:
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Hello
-        run: echo "Hello, World!"
-      - name: Disable action
-        run : gh workflow disable "setup-github.yaml"
+      - run: gh workflow disable "setup-github.yaml" --repo ${{ github.repository }}
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
