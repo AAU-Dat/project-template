@@ -6,6 +6,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - run: gh extension install twelvelabs/gh-repo-config
+      - run: gh repo-config init
+      - run: gh repo-config apply
       - run: gh workflow disable "setup-github.yaml" --repo ${{ github.repository }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
