@@ -2,10 +2,13 @@ name: Setup github repository
 on:
   create:
 
+permissions: write-all
+
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - run: gh api -X PUT /repos/{owner}/{repo}/branches/main/protection --input="branch-protection.json"
       - run: gh workflow disable "setup-github.yaml" --repo ${{ github.repository }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
