@@ -8,3 +8,5 @@ jobs:
     steps:
       - name: Hello
         run: echo "Hello, World!"
+      - name: Disable action
+        run : gh workflow disable "setup-github.yaml"
