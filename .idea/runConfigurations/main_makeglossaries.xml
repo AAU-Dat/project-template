@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="main makeglossarieslite" type="MAKEINDEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" activateToolWindowBeforeRun="false">
+  <configuration default="false" name="main makeglossaries" type="MAKEINDEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" activateToolWindowBeforeRun="false">
     <texify-makeindex>
-      <program>MAKEGLOSSARIESLITE</program>
+      <program>MAKEGLOSSARIES</program>
       <main-file>$PROJECT_DIR$/report/src/main.tex</main-file>
       <command-line-args />
       <work-dir>$PROJECT_DIR$/report/out</work-dir>
