@@ -2,7 +2,7 @@
   "latex-workshop.latex.outDir": "%WORKSPACE_FOLDER%/report/out",
   "latex-workshop.latex.recipes": [
     {
-      "name": "pdflatex -> biber -> makeglossaries-lite -> pdflatex * 2",
+      "name": "pdflatex -> biber -> makeglossaries -> pdflatex * 2",
       "tools": [
         "pdflatex",
         "biber",
