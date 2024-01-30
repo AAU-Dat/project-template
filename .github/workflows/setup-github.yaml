@@ -14,6 +14,6 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.PAT_GITHUB_TOKEN }}
       - name: Disable this workflow
-        run: gh workflow disable "setup-github.yaml" --repo ${{ github.repository }}
+        run: gh workflow disable --repo ${{ github.repository }} ${{ github.workflow }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
