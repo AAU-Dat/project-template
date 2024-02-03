@@ -14,6 +14,6 @@ jobs:
       - name: Setup GitHub Pages for repository
         run: gh api -X POST /repos/${{ github.repository }}/pages --input .github/configurations/pages.json
       - name: Setup ruleset for repository
-        run: gh api -X PUT /repos/${{ github.repository }}/rulesets --input github/configurations/rulesets.json
+        run: gh api -X PUT /repos/${{ github.repository }}/rulesets --input .github/configurations/rulesets.json
       - name: Disable this workflow
         run: gh workflow disable --repo ${{ github.repository }} ${{ github.workflow }}
